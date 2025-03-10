@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoadingViewController.swift
 //  FinalApp
 //
 //  Created by Jacob Waksmanski on 3/5/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoadingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
