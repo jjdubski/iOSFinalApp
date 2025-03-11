@@ -8,22 +8,44 @@
 import UIKit
 
 class SongDetailsViewController: UIViewController {
-
+    
+    var song: Song?
+    
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var artistLabel: UILabel!
+    
+    @IBOutlet weak var longDescription: UILabel!
+    
+    @IBOutlet weak var songImageView: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let song = song {
+            print("Recieved Song: \(song.title)")
+        } else{
+            print("No song")
+        }
+        
+        
+        
+        if let song = song {
+            titleLabel.text = song.title
+            artistLabel.text = song.artist
+            longDescription.text = song.longDescription
+            
+            let imageName = song.album.lowercased().replacingOccurrences(of: " ", with: "-")
+            songImageView.image = UIImage(named: imageName)
+            songImageView.contentMode = .scaleAspectFit
+            songImageView.layer.cornerRadius = 10
+            songImageView.clipsToBounds = true
+        }
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
