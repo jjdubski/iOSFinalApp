@@ -10,6 +10,10 @@ import UIKit
 class PlayerViewController: UIViewController {
 
     
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var playIcon: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,9 +25,19 @@ class PlayerViewController: UIViewController {
         let rectangleView = UIView(frame: CGRect(x: 0, y: 0.6*screenHeight, width: screenWidth, height: rectangleHeight))
         rectangleView.backgroundColor = .white  // Change color as needed
         
+        for i in 0..<10 {
+            let sectionWidth = screenWidth / 10
+            let sectionView = UIView(frame: CGRect(x: CGFloat(i) * sectionWidth, y: 0.6*screenHeight - rectangleHeight, width: sectionWidth, height: rectangleHeight))
+            sectionView.backgroundColor = i % 2 == 0 ? .red : .blue  // Alternating colors for visibility
+            rectangleView.addSubview(sectionView)
+        }
+        
         self.view.addSubview(rectangleView)
     }
     
+    func buttonTapped(_ sender:UIButton){
+        
+    }
     
     /*
     // MARK: - Navigation
