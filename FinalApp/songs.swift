@@ -43,7 +43,7 @@ let songs = [
          shortDescription: "A haunting narrative",
          longDescription: "Hotel California is known for its evocative lyrics and memorable guitar solos, symbolizing the excesses of the Californian lifestyle."),
     
-    Song(title: "Smells Like Teen Spirit",
+    Song(title: "Teen Spirit",
          artist: "Nirvana",
          album: "Nevermind",
          genre: .rock,

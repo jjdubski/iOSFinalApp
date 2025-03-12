@@ -27,18 +27,39 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var TitleLabel3: UILabel!
     
     @IBOutlet weak var ArtistLabel3: UILabel!
-    
-    
+        
     @IBOutlet weak var Button1: UIButton!
     @IBOutlet weak var Button2: UIButton!
     @IBOutlet weak var Button3: UIButton!
+    
+    @IBOutlet weak var SongView: UIView!
+    
+    @IBOutlet weak var SongView2: UIView!
+    
+    @IBOutlet weak var SongView3: UIView!
+    
+    @IBOutlet weak var SearchButton: UIButton!
     
     var featuredSongs: [Song] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        SongView.layer.cornerRadius = 20
+        SongView2.layer.cornerRadius = 20
+        SongView3.layer.cornerRadius = 20
         
+        
+        ImageView1.layer.cornerRadius = 20
+        ImageView1.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+
+        ImageView2.layer.cornerRadius = 20
+        ImageView2.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        
+        ImageView3.layer.cornerRadius = 20
+        ImageView3.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+
         Button1.tag = 0
         Button2.tag = 1
         Button3.tag = 2

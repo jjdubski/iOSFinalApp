@@ -9,19 +9,23 @@ import UIKit
 
 class PlayerViewController: UIViewController {
 
+    @IBOutlet weak var closeButton: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         let rectangleHeight: CGFloat = 3
         
         let rectangleView = UIView(frame: CGRect(x: 0, y: 0.6*screenHeight, width: screenWidth, height: rectangleHeight))
-        rectangleView.backgroundColor = .white  // Change color as needed
+        rectangleView.backgroundColor = .white
         
         self.view.addSubview(rectangleView)
+    }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
