@@ -572,6 +572,8 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="sR9-Z0-MsG" id="1vk-bt-icS"/>
+                        <outlet property="playButton" destination="IGW-w8-6vH" id="Zob-kJ-90V"/>
+                        <outlet property="playIcon" destination="Ugr-M4-8S4" id="kdT-Sa-1SC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZP-sV-ZZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
