@@ -21,15 +21,20 @@ class SongDetailsViewController: UIViewController {
     @IBOutlet weak var songImageView: UIImageView!
     
     
+    @IBOutlet weak var closeButton: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        longDescription.baselineAdjustment = .alignBaselines
+        longDescription.lineBreakMode = .byWordWrapping
         
         if let song = song {
             print("Recieved Song: \(song.title)")
         } else{
             print("No song")
         }
+        
         
         
         
@@ -45,6 +50,10 @@ class SongDetailsViewController: UIViewController {
             songImageView.clipsToBounds = true
         }
 
+    }
+    
+    @IBAction func closeTapped(_ sender: Any) {
+        dismiss(animated: true)
     }
     
 

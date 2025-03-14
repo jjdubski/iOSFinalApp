@@ -9,7 +9,7 @@ import UIKit
 
 class PlayerViewController: UIViewController {
 
-    
+    @IBOutlet weak var closeButton: UIImageView!  
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var playIcon: UIImageView!
     
@@ -17,13 +17,12 @@ class PlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         let rectangleHeight: CGFloat = 3
         
         let rectangleView = UIView(frame: CGRect(x: 0, y: 0.6*screenHeight, width: screenWidth, height: rectangleHeight))
-        rectangleView.backgroundColor = .white  // Change color as needed
+        rectangleView.backgroundColor = .white
         
         for i in 0..<10 {
             let sectionWidth = screenWidth / 10
@@ -35,7 +34,11 @@ class PlayerViewController: UIViewController {
         self.view.addSubview(rectangleView)
     }
     
-    func buttonTapped(_ sender:UIButton){
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func buttonTapped(_ sender:UIButton){
         
     }
     
