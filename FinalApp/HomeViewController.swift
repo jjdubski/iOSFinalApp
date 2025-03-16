@@ -37,9 +37,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var SongView2: UIView!
     
     @IBOutlet weak var SongView3: UIView!
-    
-    @IBOutlet weak var SearchButton: UIButton!
-    
+            
     var featuredSongs: [Song] = []
     
     
