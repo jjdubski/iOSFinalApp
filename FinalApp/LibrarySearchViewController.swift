@@ -2,13 +2,13 @@
 //  LibrarySearchViewController.swift
 //  FinalApp
 //
-//  Created by Serhat Cingilli on 3/15/25.
+//  Created by Jacob Waksmanski on 3/16/25.
 //
 
 import UIKit
 
 class LibrarySearchViewController: UIViewController {
-    
+  
     @IBOutlet weak var HistoryView1: UIView!
     @IBOutlet weak var HistoryTitle1: UILabel!
     @IBOutlet weak var HistoryArtist1: UILabel!
