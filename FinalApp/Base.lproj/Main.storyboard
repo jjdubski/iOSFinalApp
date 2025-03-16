@@ -248,6 +248,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="coW-zk-QQg" kind="presentation" modalPresentationStyle="fullScreen" id="q35-NA-QBV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaQ-Wk-X3M">
                                         <rect key="frame" x="160.66666666666663" y="0.0" width="152.33333333333337" height="60"/>
@@ -258,6 +261,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="paP-wn-3sB" kind="presentation" modalPresentationStyle="fullScreen" id="SYo-hV-dZt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -348,7 +354,6 @@
                         <outlet property="ImageView1" destination="O13-89-mee" id="uty-fT-hdG"/>
                         <outlet property="ImageView2" destination="BQz-S7-6tI" id="i37-Yi-MBI"/>
                         <outlet property="ImageView3" destination="nBy-fC-0z7" id="MMm-iI-2JZ"/>
-                        <outlet property="SearchButton" destination="a9L-wb-hdO" id="9xl-nE-eAZ"/>
                         <outlet property="SongView" destination="TFs-3v-BHn" id="Lfn-ba-APk"/>
                         <outlet property="SongView2" destination="OY4-vj-pfx" id="P1J-zy-zyR"/>
                         <outlet property="SongView3" destination="mnf-d4-yE1" id="eEv-6j-AEQ"/>
@@ -366,11 +371,11 @@
             <objects>
                 <viewController storyboardIdentifier="SongDetailsViewController" id="aMu-Jg-rm3" userLabel="Song Details View Controller" customClass="SongDetailsViewController" customModule="FinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xue-TR-l6v" userLabel="Song Details View">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAk-zx-v0M" userLabel="Song View">
-                                <rect key="frame" x="20" y="0.0" width="353" height="842"/>
+                                <rect key="frame" x="20" y="0.0" width="353" height="852"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Artist(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pos-HY-PCc">
                                         <rect key="frame" x="26" y="262" width="295" height="38"/>
@@ -584,7 +589,7 @@
         <!--AI Search View Controller-->
         <scene sceneID="JSK-0G-URQ">
             <objects>
-                <viewController id="coW-zk-QQg" userLabel="AI Search View Controller" sceneMemberID="viewController">
+                <viewController id="coW-zk-QQg" userLabel="AI Search View Controller" customClass="AISearchViewController" customModule="FinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x4M-aA-urt" userLabel="Ai Search View">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -597,9 +602,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="coW-zk-QQg" eventType="touchUpInside" id="MHc-Gf-tr4"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Kc-WI-xm6">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -634,9 +636,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="coW-zk-QQg" eventType="touchUpInside" id="Jrc-sy-d4K"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tGt-Db-bPc">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -670,9 +669,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="coW-zk-QQg" eventType="touchUpInside" id="RRn-uX-O7b"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byd-xK-1xX">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -706,9 +702,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="coW-zk-QQg" eventType="touchUpInside" id="nMV-Q1-Nh7"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTb-vX-O7H">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -785,20 +778,7 @@
                             <constraint firstItem="ecO-hV-NbI" firstAttribute="leading" secondItem="qeP-n9-Pux" secondAttribute="leading" constant="40" id="j8f-Xh-wPG"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="Button1" destination="ukH-dS-q8r" id="XNM-iv-JCh"/>
-                        <outlet property="Button2" destination="zAt-TI-i1G" id="6sl-dj-IVf"/>
-                        <outlet property="Button3" destination="1yX-qK-mLn" id="0P7-Te-kUw"/>
-                        <outlet property="ImageView1" destination="9Kc-WI-xm6" id="d4c-7Q-SDL"/>
-                        <outlet property="ImageView2" destination="tGt-Db-bPc" id="Ot1-KA-b4d"/>
-                        <outlet property="ImageView3" destination="byd-xK-1xX" id="7L8-8b-7rj"/>
-                        <outlet property="SongView" destination="n9x-S9-ayN" id="biR-Fx-U1G"/>
-                        <outlet property="SongView2" destination="Zre-UW-2M8" id="pgi-UB-Bkc"/>
-                        <outlet property="SongView3" destination="ecO-hV-NbI" id="TFR-ds-0LL"/>
-                        <outlet property="TitleLabel1" destination="ZXm-sB-cKf" id="p1D-hz-0bJ"/>
-                        <outlet property="TitleLabel2" destination="Pwh-Jd-5is" id="eRo-Zg-rvA"/>
-                        <outlet property="TitleLabel3" destination="Kqz-kF-pFc" id="JQs-Xr-vp2"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="5NL-Ci-TDd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ko3-VG-8IE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -807,7 +787,7 @@
         <!--Library Search View Controller-->
         <scene sceneID="PXb-ra-GLN">
             <objects>
-                <viewController id="paP-wn-3sB" userLabel="Library Search View Controller" sceneMemberID="viewController">
+                <viewController id="paP-wn-3sB" userLabel="Library Search View Controller" customClass="LibrarySearchViewController" customModule="FinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uV2-UC-HTq" userLabel="Library Search View">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -820,9 +800,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="paP-wn-3sB" eventType="touchUpInside" id="yr2-Sh-TGe"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLH-km-8HT">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -857,9 +834,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="paP-wn-3sB" eventType="touchUpInside" id="oBk-T2-ePO"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDi-yJ-z4T">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -893,9 +867,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="paP-wn-3sB" eventType="touchUpInside" id="QVj-8q-ddU"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bU-4u-j67">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -929,9 +900,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="paP-wn-3sB" eventType="touchUpInside" id="F13-Be-q9U"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skh-zV-c8m">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1008,20 +976,6 @@
                             <constraint firstItem="1pL-Re-3tP" firstAttribute="trailing" secondItem="n00-Dd-jR9" secondAttribute="trailing" constant="40" id="kZI-Rb-Nk8"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="Button1" destination="Rau-VU-dmB" id="OI9-Pg-G1E"/>
-                        <outlet property="Button2" destination="P6D-cz-v1Z" id="eMy-BT-Zo6"/>
-                        <outlet property="Button3" destination="5OQ-dn-ZmH" id="ZyJ-e9-Smy"/>
-                        <outlet property="ImageView1" destination="tLH-km-8HT" id="luO-0f-djc"/>
-                        <outlet property="ImageView2" destination="DDi-yJ-z4T" id="Ltc-94-Lop"/>
-                        <outlet property="ImageView3" destination="9bU-4u-j67" id="hAy-y1-7jU"/>
-                        <outlet property="SongView" destination="YOc-AA-sO0" id="ZlM-V8-AV9"/>
-                        <outlet property="SongView2" destination="ucM-vd-7pZ" id="oLY-ye-AqJ"/>
-                        <outlet property="SongView3" destination="rt9-Yu-JYc" id="MRZ-rM-Lac"/>
-                        <outlet property="TitleLabel1" destination="Pjg-tr-OHN" id="Vdn-L9-pNc"/>
-                        <outlet property="TitleLabel2" destination="q0T-a5-MIx" id="D5T-Jv-8k0"/>
-                        <outlet property="TitleLabel3" destination="NYc-sa-FIS" id="0Lz-rh-zQX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TlY-97-Meh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1043,9 +997,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="NGm-s7-R3l" eventType="touchUpInside" id="wkL-WN-Nba"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bc9-4R-ANT">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1074,9 +1025,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="NGm-s7-R3l" eventType="touchUpInside" id="1fA-d8-kjX"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wyp-Ck-YTn">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1110,9 +1058,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="NGm-s7-R3l" eventType="touchUpInside" id="tid-Dt-BWp"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40q-fB-E4s">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1146,9 +1091,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="NGm-s7-R3l" eventType="touchUpInside" id="c8v-Gb-Hv0"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdW-Ll-HUB">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1207,9 +1149,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="NGm-s7-R3l" eventType="touchUpInside" id="zZU-97-UIo"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="595-sK-8F2">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1247,20 +1186,6 @@
                             <constraint firstItem="797-9M-lvB" firstAttribute="leading" secondItem="02I-wH-XfB" secondAttribute="leading" constant="40" id="vd7-BF-5Hm"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="Button1" destination="agD-7K-FAB" id="qiR-cJ-WBj"/>
-                        <outlet property="Button2" destination="LPZ-Wq-ZSa" id="S2h-eA-dP0"/>
-                        <outlet property="Button3" destination="p0r-Ai-Gqa" id="SRO-D9-OmU"/>
-                        <outlet property="ImageView1" destination="Bc9-4R-ANT" id="y7p-eX-860"/>
-                        <outlet property="ImageView2" destination="Wyp-Ck-YTn" id="q8N-on-Lle"/>
-                        <outlet property="ImageView3" destination="40q-fB-E4s" id="Ua9-QD-eqm"/>
-                        <outlet property="SongView" destination="wCq-rQ-4fd" id="bq3-fx-FZq"/>
-                        <outlet property="SongView2" destination="lJI-Oq-fwa" id="YHQ-RH-32L"/>
-                        <outlet property="SongView3" destination="797-9M-lvB" id="wjU-F5-cyU"/>
-                        <outlet property="TitleLabel1" destination="WFr-eV-YaY" id="xFU-cl-NHL"/>
-                        <outlet property="TitleLabel2" destination="vnb-WG-ViZ" id="7Za-O4-yne"/>
-                        <outlet property="TitleLabel3" destination="IRs-U3-mdk" id="CUw-Ma-oC4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="US8-Il-gP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1282,9 +1207,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="hgR-Fh-2YJ" eventType="touchUpInside" id="TlT-6a-8hO"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8K-Bc-ny6">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1313,9 +1235,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="hgR-Fh-2YJ" eventType="touchUpInside" id="XbF-Tk-rzk"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0i4-Uq-jRs">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1349,9 +1268,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="hgR-Fh-2YJ" eventType="touchUpInside" id="l7m-1U-M0i"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vR2-3w-YeD">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1385,9 +1301,6 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="hgR-Fh-2YJ" eventType="touchUpInside" id="osv-zi-Tos"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4s-u4-zZt">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1446,9 +1359,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="hgR-Fh-2YJ" eventType="touchUpInside" id="Ap9-ea-ydK"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbj-k9-7Re">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1486,20 +1396,6 @@
                             <constraint firstItem="cIz-mg-4S2" firstAttribute="trailing" secondItem="Qyv-mb-pRW" secondAttribute="trailing" constant="40" id="rmn-Gc-7jM"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="Button1" destination="T7v-kU-A6u" id="Uiu-tv-1Ob"/>
-                        <outlet property="Button2" destination="FVE-ll-wQM" id="OFw-dR-MWw"/>
-                        <outlet property="Button3" destination="l8X-W5-Yd2" id="cKK-dk-rZ0"/>
-                        <outlet property="ImageView1" destination="j8K-Bc-ny6" id="lKQ-45-dXp"/>
-                        <outlet property="ImageView2" destination="0i4-Uq-jRs" id="kRz-Jw-Uqe"/>
-                        <outlet property="ImageView3" destination="vR2-3w-YeD" id="WD8-zd-U4b"/>
-                        <outlet property="SongView" destination="9NR-LF-EAo" id="8ua-fF-2Ib"/>
-                        <outlet property="SongView2" destination="Qyv-mb-pRW" id="D3g-Nt-nhy"/>
-                        <outlet property="SongView3" destination="KKY-yM-ha5" id="dde-Xo-Z6Z"/>
-                        <outlet property="TitleLabel1" destination="W3N-Xh-vUq" id="5RC-9a-LGd"/>
-                        <outlet property="TitleLabel2" destination="C08-7o-hfC" id="7I5-M5-8l7"/>
-                        <outlet property="TitleLabel3" destination="a8b-HE-eE9" id="ijs-pb-cg7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Do0-Rh-PPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1507,7 +1403,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YsK-Up-5Ud"/>
+        <segue reference="2kf-d1-vsL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backward.fill" catalog="system" width="128" height="76"/>
