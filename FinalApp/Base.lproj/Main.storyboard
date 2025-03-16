@@ -250,7 +250,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="coW-zk-QQg" kind="presentation" modalPresentationStyle="fullScreen" id="q35-NA-QBV"/>
-<!--                                             <segue destination="paP-wn-3sB" kind="presentation" modalPresentationStyle="fullScreen" id="62f-Sd-tsP"/> -->
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaQ-Wk-X3M">
@@ -585,7 +584,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZP-sV-ZZP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="42v-If-lah" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1536" y="687"/>
+            <point key="canvasLocation" x="1535" y="717"/>
         </scene>
         <!--AI Search View Controller-->
         <scene sceneID="JSK-0G-URQ">
@@ -857,7 +856,7 @@
                                 <rect key="frame" x="40" y="726" width="152.66666666666663" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Home" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </backgroundConfiguration>
@@ -910,6 +909,17 @@
                                     <segue destination="hgR-Fh-2YJ" kind="presentation" identifier="ShowSearchResults" modalPresentationStyle="fullScreen" id="zRH-v4-rOa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-be-Awk">
+                                <rect key="frame" x="211" y="726" width="152.33333333333348" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Home" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1pL-Re-3tP"/>
                         <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
@@ -933,7 +943,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TlY-97-Meh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="655.72519083969462" y="686.61971830985919"/>
+            <point key="canvasLocation" x="656" y="718"/>
         </scene>
         <!--AI Search Results View Controller-->
         <scene sceneID="EoD-dc-0kl">
