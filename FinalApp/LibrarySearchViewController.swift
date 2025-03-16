@@ -31,7 +31,7 @@ class LibrarySearchViewController: UIViewController {
     
     @IBOutlet weak var SearchLabel: UILabel!
     
-    
+    private var songToPass: Song?
     
     var searchHistory: [Song] = []
     
@@ -46,34 +46,49 @@ class LibrarySearchViewController: UIViewController {
         SearchBar.backgroundColor = .clear
         
         updateHistoryUI()
-        
-
+    
     }
     
     
     @IBAction func searchButtonTapped(_ sender: Any) {
         let query = SearchBar.text?.lowercased() ?? ""
+        print("Search query: \(query)")
         
         let filteredSongs = songs.filter { song in
             song.title.lowercased().contains(query)
         }
+        print("Filtered songs count: \(filteredSongs.count)")
         
         if let firstSong = filteredSongs.first {
+            print("Found matching song: \(firstSong.title)")
             searchHistory.insert(firstSong, at: 0)
             if searchHistory.count > 3 {
                 searchHistory.removeLast()
             }
             updateHistoryUI()
             
-            performSegue(withIdentifier: "ShowSearchResults", sender: firstSong)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       
+            if let resultsVC = storyboard.instantiateViewController(withIdentifier: "SearchResultsViewController") as? SearchResultsViewController {
+                resultsVC.song = firstSong
+                print("Manually presenting with song: \(firstSong.title)")
+                resultsVC.modalPresentationStyle = .fullScreen
+                self.present(resultsVC, animated: true)
+            }
+        } else {
+            print("No matching songs found")
+            showAlert(title: "No Results", message: "No songs found matching '\(query)'")
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "ShowSearchResults" {
-            if let resultsVC = segue.destination as? SearchResultsViewController,
-               let song = sender as? Song {
-                resultsVC.song = song
+            if let resultsVC = segue.destination as? SearchResultsViewController {
+                
+                if let song = self.songToPass {
+                    resultsVC.song = song
+                }
             }
         }
     }
@@ -99,5 +114,11 @@ class LibrarySearchViewController: UIViewController {
         
     @IBAction func closeTapped(_ sender: Any) {
         dismiss(animated: true)
+    }
+
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

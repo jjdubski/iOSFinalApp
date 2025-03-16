@@ -13,15 +13,11 @@ class SongDetailsViewController: UIViewController {
     
     
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var artistLabel: UILabel!
-    
     @IBOutlet weak var longDescription: UILabel!
-    
     @IBOutlet weak var songImageView: UIImageView!
-    
-    
     @IBOutlet weak var closeButton: UIImageView!
+    @IBOutlet weak var playButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +31,6 @@ class SongDetailsViewController: UIViewController {
             print("No song")
         }
         
-        
-        
-        
         if let song = song {
             titleLabel.text = song.title
             artistLabel.text = song.artist
@@ -50,6 +43,17 @@ class SongDetailsViewController: UIViewController {
             songImageView.clipsToBounds = true
         }
 
+    }
+    
+    @IBAction func playButtonTapped(_ sender: Any) {
+        guard let song = song else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let playerVC = storyboard.instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController {
+            playerVC.song = song
+            playerVC.modalPresentationStyle = .fullScreen
+            present(playerVC, animated: true)
+        }
     }
     
     @IBAction func closeTapped(_ sender: Any) {
