@@ -13,43 +13,37 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var playIcon: UIImageView!
     
+    @IBOutlet weak var PlayerImage: UIImageView!
+    @IBOutlet weak var PlayerTitle: UILabel!
+    @IBOutlet weak var PlayerArtist: UILabel!
+    
+    var song: Song?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
-        let rectangleHeight: CGFloat = 3
-        
-        let rectangleView = UIView(frame: CGRect(x: 0, y: 0.6*screenHeight, width: screenWidth, height: rectangleHeight))
-        rectangleView.backgroundColor = .white
-        
-        for i in 0..<10 {
-            let sectionWidth = screenWidth / 10
-            let sectionView = UIView(frame: CGRect(x: CGFloat(i) * sectionWidth, y: 0.6*screenHeight - rectangleHeight, width: sectionWidth, height: rectangleHeight))
-            sectionView.backgroundColor = i % 2 == 0 ? .red : .blue  // Alternating colors for visibility
-            rectangleView.addSubview(sectionView)
+
+        if let song = song {
+            PlayerTitle.text = song.title
+            PlayerArtist.text = song.artist
+            
+            let imageName = song.album.lowercased().replacingOccurrences(of: " ", with: "-")
+            PlayerImage.image = UIImage(named: imageName)
+            PlayerImage.contentMode = .scaleAspectFit
+            PlayerImage.layer.cornerRadius = 10
+            PlayerImage.clipsToBounds = true
         }
-        
-        self.view.addSubview(rectangleView)
+    }
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        if playIcon.image == UIImage(systemName: "play.fill") {
+            playIcon.image = UIImage(systemName: "pause.fill")
+        } else {
+            playIcon.image = UIImage(systemName: "play.fill")
+        }
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func buttonTapped(_ sender:UIButton){
-        
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

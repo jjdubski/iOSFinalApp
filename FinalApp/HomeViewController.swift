@@ -37,8 +37,26 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var SongView2: UIView!
     
     @IBOutlet weak var SongView3: UIView!
-            
+    
+    @IBOutlet weak var ArtistImage1: UIImageView!
+    @IBOutlet weak var ArtistImage2: UIImageView!
+    @IBOutlet weak var ArtistImage3: UIImageView!
+    
+    
+    @IBOutlet weak var FeaturedArtistLabel1: UILabel!
+    @IBOutlet weak var FeaturedArtistLabel2: UILabel!
+    @IBOutlet weak var FeaturedArtistLabel3: UILabel!
+    
     var featuredSongs: [Song] = []
+    
+    var featuredArtists = [
+        "Taylor Swift",
+        "Justin Bieber",
+        "Central Cee",
+        "Bad Bunny",
+        "Drake",
+        "The Weeknd"
+    ]
     
     
     override func viewDidLoad() {
@@ -69,6 +87,11 @@ class HomeViewController: UIViewController {
         configureFeaturedButton(imageView: ImageView1, titleLabel: TitleLabel1, artistLabel: ArtistLabel1, song: featuredSongs[0])
         configureFeaturedButton(imageView: ImageView2, titleLabel: TitleLabel2, artistLabel: ArtistLabel2, song: featuredSongs[1])
         configureFeaturedButton(imageView: ImageView3, titleLabel: TitleLabel3, artistLabel: ArtistLabel3, song: featuredSongs[2])
+        
+        let shuffledArtists = featuredArtists.shuffled()
+        configureFeaturedArtist(imageView: ArtistImage1, nameLabel: FeaturedArtistLabel1, artistName: shuffledArtists[0])
+        configureFeaturedArtist(imageView: ArtistImage2, nameLabel: FeaturedArtistLabel2, artistName: shuffledArtists[1])
+        configureFeaturedArtist(imageView: ArtistImage3, nameLabel: FeaturedArtistLabel3, artistName: shuffledArtists[2])
     }
     
     private func configureFeaturedButton(
@@ -86,6 +109,21 @@ class HomeViewController: UIViewController {
         
         imageView.clipsToBounds = true
         
+    }
+    
+    private func configureFeaturedArtist(
+        imageView: UIImageView,
+        nameLabel: UILabel,
+        artistName: String
+    ) {
+        nameLabel.text = artistName
+        
+        let imageName = artistName.lowercased().replacingOccurrences(of: " ", with: "-")
+        imageView.image = UIImage(named: imageName)
+        
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = imageView.frame.width / 2 
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
