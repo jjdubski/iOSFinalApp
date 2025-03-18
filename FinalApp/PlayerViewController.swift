@@ -21,7 +21,6 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var PlayerArtist: UILabel!
 
 
-    // an array to keep track of the order of songs with the first song being the current song
     var songList: [Song] = []
     var song: Song?
     var timer: Timer?
@@ -38,7 +37,7 @@ class PlayerViewController: UIViewController {
         let rectangleHeight: CGFloat = 3
         
         let lineView = UIView(frame: CGRect(x: 0, y: 0.55*screenHeight, width: screenWidth, height: rectangleHeight))
-        lineView.backgroundColor = .white  // Change color as needed
+        lineView.backgroundColor = .white
 
         self.view.addSubview(lineView)
 
@@ -108,8 +107,8 @@ class PlayerViewController: UIViewController {
         for (i, sectionView) in sectionViews.enumerated() {
             let sectionWidth = screenWidth / 10
             let currentHeight = sectionView.frame.height
-            let randomAdjustment = CGFloat(arc4random_uniform(41)) - 20  // Random adjustment between -20 and 20
-            let newHeight = max(50, min(150, currentHeight + randomAdjustment))  // Ensure height stays between 50 and 150
+            let randomAdjustment = CGFloat(arc4random_uniform(41)) - 20
+            let newHeight = max(50, min(150, currentHeight + randomAdjustment))
             sectionView.frame = CGRect(x: CGFloat(i)*sectionWidth, y: 0.55*screenHeight - newHeight, width: sectionWidth, height: newHeight)
         }
     }
@@ -130,13 +129,11 @@ class PlayerViewController: UIViewController {
         let screenHeight = UIScreen.main.bounds.height
         let sectionWidth = screenWidth / 10
         
-        // Clear existing section views
         for sectionView in sectionViews {
             sectionView.removeFromSuperview()
         }
         sectionViews.removeAll()
         
-        // Use existing heights if available
         if sectionViewHeights.isEmpty {
             sectionViewHeights = (0..<10).map { _ in CGFloat(arc4random_uniform(150) + 50) }
         }

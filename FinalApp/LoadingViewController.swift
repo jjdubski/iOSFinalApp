@@ -14,7 +14,6 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         bufferIcon.startAnimating()
 
         Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(switchToHomeViewController), userInfo: nil, repeats: false)
