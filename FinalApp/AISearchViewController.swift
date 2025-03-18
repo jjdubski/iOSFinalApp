@@ -42,6 +42,13 @@ class AISearchViewController: UIViewController {
         
         AiSearchBar.backgroundImage = UIImage()
         AiSearchBar.backgroundColor = .clear
+//        let textFieldInsideSearchBar = AiSearchBar.value(forKey: "searchField") as? UITextField
+//        
+//        let colorWhite = UIColor()
+//        colorWhite.set()
+//
+//        textFieldInsideSearchBar?.textColor = colorWhite
+        
         
         updateHistoryUI()
     }

@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Song {
+class Song : Equatable {
+   
+    static func == (lhs: Song, rhs: Song) -> Bool {
+        return lhs.title == rhs.title && lhs.artist == rhs.artist
+    }
     
     enum Genre: String {
         case pop = "Pop"
@@ -100,7 +104,7 @@ let songs = [
             Song.RelatedSong(title: "Life in the Fast Lane", album: "Hotel California")
          ]),
     
-    Song(title: "Teen Spirit",
+    Song(title: "Smells Like Teen Spirit",
          artist: "Nirvana",
          album: "Nevermind",
          genre: .rock,
