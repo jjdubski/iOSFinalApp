@@ -80,7 +80,6 @@ class HomeViewController: UIViewController {
         Button2.tag = 1
         Button3.tag = 2
         
-        // move to Loading
         let shuffledSongs = songs.shuffled()
         featuredSongs = [shuffledSongs[0], shuffledSongs[1], shuffledSongs[2]]
         
@@ -89,7 +88,6 @@ class HomeViewController: UIViewController {
         configureFeaturedButton(imageView: ImageView2, titleLabel: TitleLabel2, artistLabel: ArtistLabel2, song: featuredSongs[1])
         configureFeaturedButton(imageView: ImageView3, titleLabel: TitleLabel3, artistLabel: ArtistLabel3, song: featuredSongs[2])
         
-        // move to Loading
         let shuffledArtists = featuredArtists.shuffled()
         configureFeaturedArtist(imageView: ArtistImage1, nameLabel: FeaturedArtistLabel1, artistName: shuffledArtists[0])
         configureFeaturedArtist(imageView: ArtistImage2, nameLabel: FeaturedArtistLabel2, artistName: shuffledArtists[1])
